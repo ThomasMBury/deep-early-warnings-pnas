@@ -27,7 +27,7 @@ df_traj = pd.read_csv('../data/processed_data/df_nulls.csv')
 null_number = 1
 
 # Import EWS data
-df_ews = pd.read_csv('../data/ews/df_ews_null_len1500.csv')
+df_ews = pd.read_csv('../data/ews/df_ews_null.csv')
 # Plot null number 1 (out of 2)
 df_ews = df_ews[df_ews['Null number']==null_number]
 
@@ -327,7 +327,7 @@ def make_grid_figure(tsid, letter_label, title):
                             },
                      row=3,col=1)    
     
-    fig.update_yaxes(title={'text':'ML weights',
+    fig.update_yaxes(title={'text':'DL weights',
                             'standoff':5,
                             },
                      range=[-0.05,1.07],

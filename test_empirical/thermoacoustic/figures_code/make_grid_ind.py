@@ -24,7 +24,7 @@ from plotly.subplots import make_subplots
 df_traj = pd.read_csv('../data/processed_data/df_transitions.csv')
 
 # Import EWS data
-df_ews = pd.read_csv('../data/ews/df_ews_forced_len1500_gaussian.csv')
+df_ews = pd.read_csv('../data/ews/df_ews_forced.csv')
 
 # Import ML prediction data
 df_ml = pd.read_csv('../data/ml_preds/protocol3/parsed/df_ml_forced.csv')
@@ -331,7 +331,7 @@ def make_grid_figure(tsid, letter_label, title):
                             },
                      row=3,col=1)    
     
-    fig.update_yaxes(title={'text':'ML weights',
+    fig.update_yaxes(title={'text':'DL weights',
                             'standoff':5,
                             },
                      range=[-0.05,1.07],

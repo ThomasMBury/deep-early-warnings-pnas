@@ -373,7 +373,7 @@ def make_grid_figure(tsid, letter_label, title):
                             },
                      row=3,col=1)    
     
-    fig.update_yaxes(title={'text':'ML weights',
+    fig.update_yaxes(title={'text':'DL weights',
                             'standoff':5,
                             },
                      range=[-0.05,1.07],
