@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 **/test_models**: Code to simulate and compute early warning signals for the test models. These include the Consumer-Resource model, May's harvesting model and an SEIRX model.
 
-**/test_empirical**: Code to pre-process and compute early warning signals for the empirical datasets. These include Sedimentary archives from the Mediterranean Sea, thermoacoustic instability, and paleoclimate transitions.
+**/test_empirical**: Code to pre-process and compute early warning signals for the empirical datasets. These include Sedimentary archives from the Mediterranean Sea, thermoacoustic instabilities, and paleoclimate transitions.
 
 **/training_data**: Code to generate training data for the deep learning algorithm.
 
