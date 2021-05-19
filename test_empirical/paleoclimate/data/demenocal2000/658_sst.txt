@@ -1,0 +1,259 @@
+Holocene Variations in Subtropical Atlantic Sea-Surface Temperatures
+---------------------------------------------------------------------
+                   NOAA Paleoclimatology Program
+                               and
+              World Data Center for Paleoclimatology, Boulder
+---------------------------------------------------------------------
+NOTE: PLEASE CITE ORIGINAL REFERENCE WHEN USING THIS DATA!!!!!
+
+NAME OF DATA SET: Holocene Variations in Subtropical Atlantic SST
+LAST UPDATE: 7/2001 (Original Receipt by WDCA Paleo)  
+CONTRIBUTORS: Peter deMenocal, Tom Guilderson, Joe Ortiz, Michael Sarnthein
+
+IGBP PAGES/WDCA CONTRIBUTION SERIES NUMBER: 2001-054
+
+SUGGESTED DATA CITATION: deMenocal, P.B., et al., 2001,
+Holocene Variations in Subtropical Atlantic SST. 
+IGBP PAGES/World Data Center A for Paleoclimatology 
+Data Contribution Series #2001-054. 
+NOAA/NGDC Paleoclimatology Program, Boulder CO, USA. 
+
+ORIGINAL REFERENCE: 
+deMenocal, P.B., J. Ortiz, T. Guilderson, and M. Sarnthein, 2000,
+Coherent High- and Low-Latitude Climate Variability During the 
+Holocene Warm Period, Science, 288 (5474), 2198-2202.
+
+FUNDING SOURCE: National Science Foundation, MG&G, USA
+
+GEOGRAPHIC REGION: Subtropical Atlantic Ocean 
+PERIOD OF RECORD: 23 - 0 KYrBP 
+
+
+DESCRIPTION:
+Holocene SST variations at Site 658C were reconstructed using planktonic 
+foraminiferal assemblage data.  Counts of 29 species were converted to warm 
+and cold season SSTs using the F13' transfer function as presented in 
+W. F. Ruddiman and L. K. Glover, Quat. Res. 5, 361-389 (1975). 
+Average temporal resolution of the SST data ranges between ca. 50-100 years. 
+Warm and cold season SST anomalies relative to coretop values and the 
+warm-cold season SST seasonality were also computed.  
+
+Variable: sample depth (cm), sample age (yrs BP), 
+Planktonic foraminiferal assemblage sea surface temperature estimates 
+(SSTwarm, SSTcold, SSTwarm anomaly, SSTcold anomaly, SST seasonality)
+Variable unit: degrees centigrade
+Data precision: SSTwarm= ±1.6°C, SSTcold=±1.3°C
+
+
+Ocean Drilling Program Site 658, Hole C. 
+Ocean Drilling Program Hole 658C was cored off Cap Blanc, Mauritania 
+(20°45'N, 18°35'W, (GPS), 2263m) during ODP Leg 108. 
+Sediment accumulation rates are high at this site (22 cm/kyr average) due, 
+in part, to the dual influences of high regional surface ocean productivity 
+and high supply of windblown African mineral dust. Strong seasonal upwelling 
+and high productivity results from the strong northeast Trade winds which 
+parallel the Northwest African margin. Hole 658C is also positioned within 
+the axis of the summer African eolian dust plume which transports Saharan 
+mineral aerosol dust to the adjacent subtropical Atlantic ocean. 
+The site lies within an oceanographic boundary separating cooler temperate 
+and subpolar waters to the north from warmer tropical water masses to the 
+south and west.
+
+
+Core 1H from Hole 658C was continuously subsampled at 2 cm intervals 
+which is equivalent to between 50-100 years temporal resolution. 
+Samples were analyzed for calcium carbonate and biogenic opal percentages, 
+and the residual terrigenous (eolian) fraction was computed by difference. 
+Planktonic foraminiferal assemblage census counts were then conducted on 
+prepared samples (14). Warm and cold season SST estimates were calculated 
+from the census count data using the F13' transfer function derived from 
+faunal analysis of 191 Atlantic core tops 
+(Ruddiman and Glover, Quat. Res. 5, 361-389 1975). 
+Standard errors of estimate for the F13'-derived warm and cold season SSTs 
+are 1.6°C and 1.3°C, respectively. At Hole 658C, the coretop (0-2cm) warm 
+and cold season foraminiferal SST estimates (16.8°C and 25.8°C) agree within 
+the error of estimate with the observed annual SST range at this location 
+(18°C and 24°C, respectively).
+
+
+Age control was established using 31 accelerator mass spectrometer (AMS) 
+radiocarbon dates of monospecific samples of planktonic foraminifera 
+(Globigerina bulloides or Globorotalia inflata) spanning the last 24,000 
+calendar years BP. Raw radiocarbon dates were converted to calibrated 
+calendar ages after applying a -500±50 year reservoir correction. 
+The resulting age-depth profile indicates that sedimentation was continuous 
+at a rate of 22 cm/ka spanning the last ca. 14 cal. ka BP. 
+However, a brief hiatus between 328-324 cm (17.4-14.3 cal. ka BP) 
+is indicated by several closely spaced dates (19).
+
+Date of data generation: 1998-2000
+
+
+DATA:
+
+
+"Cal age (yr BP, Calib 4.12)"	Center depth (cm)	"SST, warm"	"SST, cool"	"SSTw, anomaly"	"SSTc, anomaly"	"SST, seasonal change"
+88	1	25.8	16.8	0.0	0.0	9.0
+186	3	23.8	15.6	-2.0	-1.3	8.3
+284	5	22.4	14.8	-3.4	-2.0	7.6
+382	7	21.9	13.7	-3.9	-3.1	8.2
+480	9	26.0	16.2	0.2	-0.6	9.8
+515	11	24.0	15.4	-1.8	-1.4	8.6
+550	13	26.6	17.4	0.8	0.6	9.2
+585	15	24.5	15.8	-1.3	-1.0	8.7
+620	17	26.3	17.0	0.5	0.2	9.3
+656	19	25.4	16.9	-0.4	0.1	8.5
+693	21	26.3	17.3	0.5	0.5	8.9
+730	23	22.9	15.0	-2.9	-1.8	7.9
+766	25	22.2	14.3	-3.6	-2.5	7.9
+803	27	24.6	15.9	-1.2	-1.0	8.7
+840	29	25.3	15.3	-0.5	-1.5	10.0
+886	31	24.3	15.8	-1.5	-1.1	8.5
+933	33	25.3	15.4	-0.5	-1.4	9.8
+980	35	25.9	16.8	0.1	0.0	9.1
+1026	37	26.7	16.7	0.9	-0.1	10.0
+1073	39	26.2	17.4	0.4	0.6	8.8
+1120	41	27.1	16.8	1.3	0.0	10.0
+1166	43	25.5	16.1	-0.3	-0.7	9.4
+1213	45	26.3	16.6	0.5	-0.2	9.7
+1260	47	26.1	16.6	0.3	-0.2	9.5
+1306	49	26.4	17.2	0.6	0.3	9.2
+1353	51	25.9	16.6	0.1	-0.2	9.3
+1400	53	26.4	16.2	0.6	-0.6	10.0
+1515	55	25.6	15.9	-0.2	-0.9	9.7
+1630	57	26.4	17.2	0.6	0.4	9.2
+1745	59	23.6	15.1	-2.2	-1.7	8.5
+1860	61	24.3	15.3	-1.4	-1.5	9.0
+1975	63	23.0	15.2	-2.8	-1.6	7.8
+2090	65	25.3	15.6	-0.5	-1.2	9.7
+2270	67	25.2	16.1	-0.6	-0.7	9.1
+2451	69	25.4	16.5	-0.4	-0.3	8.9
+2632	71	25.7	16.4	-0.1	-0.4	9.3
+2813	73	24.9	16.3	-0.9	-0.6	8.6
+2994	75	23.2	15.5	-2.6	-1.3	7.7
+3175	77	24.9	16.1	-0.9	-0.7	8.8
+3355	79	24.1	15.5	-1.7	-1.3	8.6
+3536	81	25.8	16.5	0.1	-0.3	9.3
+3717	83	25.3	16.2	-0.5	-0.7	9.2
+3898	85	26.5	17.0	0.8	0.1	9.6
+4079	87	26.6	17.1	0.8	0.3	9.6
+4260	89	26.6	17.0	0.9	0.2	9.7
+4321	91	25.4	16.5	-0.4	-0.3	8.8
+4383	93	26.9	16.0	1.1	-0.8	11.0
+4445	95	25.1	16.7	-0.7	-0.1	8.4
+4507	97	25.8	16.3	0.0	-0.5	9.5
+4568	99	24.8	15.9	-1.0	-0.9	8.9
+4630	101	24.1	16.3	-1.7	-0.5	7.8
+4692	103	25.0	16.4	-0.8	-0.4	8.6
+4754	105	25.5	16.4	-0.3	-0.4	9.0
+4877	109	25.1	16.7	-0.7	-0.1	8.4
+4939	111	25.2	16.4	-0.6	-0.4	8.7
+5001	113	25.8	17.0	0.0	0.2	8.8
+5062	115	25.3	16.7	-0.5	-0.2	8.6
+5124	117	25.5	17.1	-0.3	0.3	8.4
+5186	119	25.5	16.3	-0.3	-0.5	9.2
+5248	121	24.5	16.1	-1.3	-0.7	8.4
+5310	123	23.6	16.1	-2.1	-0.8	7.6
+5434	125	25.0	17.2	-0.8	0.4	7.8
+5559	127	23.6	16.0	-2.2	-0.9	7.6
+5683	129	23.6	16.0	-2.2	-0.9	7.6
+5808	131	21.2	14.5	-4.6	-2.3	6.7
+6057	135	21.3	14.5	-4.5	-2.3	6.8
+6182	137	21.1	14.3	-4.7	-2.5	6.8
+6306	139	20.5	13.9	-5.2	-2.9	6.7
+6431	141	22.1	15.3	-3.7	-1.5	6.8
+6555	143	21.4	14.6	-4.4	-2.2	6.8
+6680	145	21.9	15.3	-3.9	-1.5	6.6
+6804	147	21.5	15.1	-4.3	-1.7	6.4
+6929	149	21.8	14.8	-4.0	-2.0	7.0
+7054	151	20.1	14.0	-5.7	-2.8	6.1
+7240	154	21.0	14.6	-4.8	-2.2	6.4
+7365	156	20.1	13.8	-5.7	-3.1	6.3
+7490	158	20.7	14.4	-5.1	-2.4	6.2
+7530	160	19.2	13.3	-6.6	-3.5	5.8
+7610	164	19.4	13.6	-6.4	-3.2	5.8
+7650	166	19.8	13.3	-6.0	-3.5	6.5
+7690	168	20.0	13.9	-5.7	-2.9	6.2
+7730	170	20.0	14.0	-5.8	-2.8	6.0
+7810	174	20.3	14.3	-5.5	-2.6	6.0
+7850	176	19.7	13.7	-6.1	-3.1	5.9
+7890	178	20.3	14.1	-5.5	-2.7	6.2
+7930	180	18.8	13.1	-7.0	-3.7	5.7
+7970	182	19.1	13.6	-6.7	-3.2	5.5
+8010	184	18.6	12.8	-7.2	-4.1	5.8
+8211	186	20.7	14.2	-5.1	-2.6	6.5
+8613	190	21.2	14.0	-4.6	-2.9	7.3
+8814	192	21.0	13.7	-4.8	-3.2	7.4
+9015	194	21.4	14.1	-4.3	-2.7	7.3
+9417	198	22.6	15.4	-3.2	-1.4	7.3
+9820	202	21.7	14.9	-4.1	-1.9	6.7
+10037	206	21.5	14.4	-4.3	-2.5	7.1
+10145	208	21.8	14.6	-4.0	-2.2	7.1
+10254	210	20.5	13.4	-5.3	-3.4	7.1
+10362	212	20.8	13.6	-5.0	-3.2	7.1
+10471	214	21.5	14.2	-4.2	-2.6	7.3
+10688	218	21.5	14.2	-4.3	-2.6	7.3
+10905	222	22.1	14.5	-3.7	-2.3	7.5
+11014	224	21.8	14.3	-4.0	-2.5	7.5
+11122	226	22.9	15.3	-2.8	-1.5	7.7
+11231	228	21.4	13.9	-4.4	-2.9	7.5
+11340	230	21.9	14.5	-3.9	-2.3	7.4
+11406	232	21.4	14.2	-4.4	-2.7	7.2
+11473	234	21.6	14.4	-4.2	-2.4	7.2
+11606	238	21.5	14.0	-4.3	-2.8	7.5
+11739	242	21.1	13.9	-4.6	-2.9	7.2
+11872	246	20.6	13.7	-5.2	-3.2	6.9
+12005	250	21.3	13.8	-4.5	-3.0	7.5
+12138	254	21.8	14.3	-4.0	-2.5	7.4
+12271	258	20.4	13.6	-5.4	-3.2	6.8
+12338	260	20.8	13.6	-5.0	-3.2	7.2
+12404	262	20.0	13.2	-5.8	-3.6	6.8
+12537	266	20.6	14.1	-5.2	-2.7	6.5
+12670	270	20.8	13.8	-5.0	-3.0	7.0
+12803	274	20.4	13.7	-5.4	-3.2	6.7
+12936	278	20.5	13.4	-5.3	-3.4	7.1
+12990	280	20.0	13.7	-5.8	-3.1	6.4
+13030	282	21.9	14.7	-3.9	-2.1	7.1
+13070	284	21.3	14.0	-4.5	-2.8	7.2
+13110	286	20.6	13.4	-5.2	-3.4	7.2
+13190	290	20.9	13.7	-4.9	-3.1	7.2
+13230	292	22.0	14.3	-3.8	-2.6	7.7
+13270	294	22.7	15.1	-3.1	-1.7	7.6
+13354	296	21.7	14.8	-4.1	-2.0	6.9
+13438	298	21.6	14.3	-4.2	-2.5	7.3	
+13606	302	21.1	14.4	-4.6	-2.4	6.7	
+13859	308	21.0	13.8	-4.8	-3.0	7.2	
+14027	312	22.0	15.1	-3.7	-1.7	6.9	
+14146	316	20.8	14.3	-4.9	-2.5	6.6	
+14248	320	21.4	14.1	-4.4	-2.7	7.2	
+14299	322	20.3	13.6	-5.5	-3.2	6.7	
+14350	324	19.4	12.9	-6.4	-3.9	6.5	
+14800	326	20.5	15.2	-5.3	-1.6	5.3	
+							Hiatus
+17420	328	17.7	11.9	-8.1	-4.9	5.8	
+17756	332	17.8	12.1	-8.0	-4.7	5.7	
+18092	336	17.8	12.1	-8.0	-4.7	5.7	
+18429	340	17.9	11.4	-7.9	-5.4	6.4	
+18765	344	18.3	12.0	-7.5	-4.8	6.3	
+19101	348	17.9	12.0	-7.8	-4.8	5.9	
+19270	350	18.4	12.2	-7.4	-4.7	6.2
+19366	352	17.5	11.8	-8.3	-5.0	5.7
+19558	356	17.4	11.9	-8.4	-4.9	5.5
+19751	360	18.1	12.5	-7.7	-4.3	5.5
+19943	364	17.7	12.0	-8.1	-4.8	5.8
+20136	368	17.3	11.4	-8.5	-5.4	5.9
+20328	372	16.5	10.7	-9.3	-6.1	5.8
+20521	376	17.2	11.5	-8.6	-5.3	5.6
+20713	380	18.1	12.3	-7.7	-4.6	5.9
+20905	384	19.9	13.5	-5.9	-3.3	6.4
+21098	388	19.8	13.7	-6.0	-3.1	6.0
+21290	392	19.4	12.8	-6.4	-4.0	6.6
+21483	396	18.8	12.2	-7.0	-4.6	6.6
+21675	400	19.2	12.5	-6.6	-4.4	6.7
+21868	404	18.8	12.4	-7.0	-4.5	6.5
+22060	408	17.7	12.1	-8.1	-4.7	5.5
+22253	412	19.6	14.1	-6.2	-2.7	5.5
+22445	416	18.3	12.4	-7.5	-4.4	5.9
+22638	420	18.4	12.8	-7.4	-4.0	5.6
+22830	424	19.8	14.1	-6.0	-2.7	5.7
+23023	428	20.1	14.4	-5.7	-2.4	5.7
