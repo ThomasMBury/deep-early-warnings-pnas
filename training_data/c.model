@@ -1,0 +1,10 @@
+unames = {1: 'x', 2: 'y'}
+parnames = {1: 'a1', 2: 'a2', 3: 'a3', 4: 'a4', 5: 'a5', 6: 'a6', 7: 'a7', 8: 'a8', 9: 'a9', 10: 'a10', 12: 'b1', 13: 'b2', 14: 'b3', 15: 'b4', 16: 'b5', 17: 'b6', 18: 'b7', 19: 'b8', 20: 'b9', 21: 'b10'}
+NDIM=   2, IPS =   1, IRS =   0, ILP =   1
+ICP =  ['a1']
+NTST=  15, NCOL=   4, IAD =   3, ISP =   1, ISW = 1, IPLT= 0, NBC= 0, NINT= 0
+NMX=  500, NPR=  500, MXBF=  -1, IID =   2, ITMX= 8, ITNW= 5, NWTN= 3, JAC= 0
+EPSL= 1e-07, EPSU = 1e-07, EPSS = 1e-05
+DS  =   1e-02, DSMIN=  1e-03, DSMAX= 1e-01, IADS=   1
+NPAR = 20, THL =  {}, THU =  {}
+UZSTOP =  {'a1':[-5,5]}

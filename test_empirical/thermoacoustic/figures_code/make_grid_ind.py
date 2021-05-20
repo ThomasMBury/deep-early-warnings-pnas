@@ -349,17 +349,6 @@ def make_grid_figure(tsid, letter_label, title):
 
     return fig
 
-# # Rate of forcing
-# tsid = 1
-# rof = df_properties['rate of forcing (mV/s)'].iloc[0]
-
-
-# # make single fig
-# fig = make_grid_figure(1,'a','RoF={}'.format(rof))
-# fig.write_html('temp.html')
-# # fig.write_image('temp.png',scale=2)
-
-
 
 #---------- Loop over all ID values
 list_tsid = df_traj['tsid'].unique()

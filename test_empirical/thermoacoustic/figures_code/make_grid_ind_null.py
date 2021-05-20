@@ -346,13 +346,6 @@ def make_grid_figure(tsid, letter_label, title):
     return fig
 
 
-# make single fig
-tsid=7
-fig = make_grid_figure(tsid,'a','')
-fig.write_html('temp.html')
-# fig.write_image('temp.png',scale=2)
-
-
 
 #---------- Loop over all ID values
 # Note that we only use tsid 1-10 as other values are limit cycles

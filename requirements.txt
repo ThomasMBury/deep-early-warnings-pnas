@@ -1,0 +1,5 @@
+ruptures
+numpy
+pandas
+scipy
+ewstools
