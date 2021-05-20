@@ -21,4 +21,9 @@ pip install -r requirements.txt
 
 **/training_data**: Code to generate training data for the deep learning algorithm.
 
+## Data sources
 
+The empirical data used in this study are available from the following sources:
+1. Sedimentary archives from the Mediterranean Sea from the study **Hennekam, Rick, et al. "Early‐warning signals for marine anoxic events." Geophysical Research Letters 47.20 (2020): e2020GL089183.**
+2. Thermoacoustic instabilities from the study **Pavithran, Induja, and R. I. Sujith. "Effect of rate of change of parameter on early warning signals for critical transitions" Chaos: An Interdisciplinary Journal of Nonlinear Science 31.1 (2021): 013116.**
+3. Paleoclimate transitions from the study **Dakos, Vasilis, et al. "Slowing down as an early warning signal for abrupt climate change." Proceedings of the National Academy of Sciences 105.38 (2008): 14308-14312.**
