@@ -32,3 +32,18 @@ The empirical data used in this study are available from the following sources:
 1. **Sedimentary archives** from the Mediterranean Sea from the study [Hennekam, Rick, et al. "Early‐warning signals for marine anoxic events." Geophysical Research Letters 47.20 (2020): e2020GL089183.](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL089183)
 2. **Thermoacoustic instabilities** from the study [Pavithran, Induja, and R. I. Sujith. "Effect of rate of change of parameter on early warning signals for critical transitions" Chaos: An Interdisciplinary Journal of Nonlinear Science 31.1 (2021): 013116.](https://aip.scitation.org/doi/full/10.1063/5.0025533?casa_token=isaRQyMz9J0AAAAA%3AnT4dG70bROSFkRSDm-7U6wDx20NTnSFuyUqAsobZKEjkwrnneG8ienGwLPkKmj56ZU7f3-aRH5F-&)
 3. **Paleoclimate transitions** from the study [Dakos, Vasilis, et al. "Slowing down as an early warning signal for abrupt climate change." Proceedings of the National Academy of Sciences 105.38 (2008): 14308-14312.](https://www.pnas.org/content/105/38/14308.short)
+
+
+## License
+Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
+Copyright © 2021, Thomas Bury (McGill University), Chris Bauch (University of Waterloo), Madhur Anand (University of Guelph)
