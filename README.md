@@ -18,6 +18,8 @@ http://www.macs.hw.ac.uk/~gabriel/auto07/auto.html
 
 ## Directories
 
+**/dl_train:** Code to train the DL algorithm
+
 **/figures_pnas:** Code to generate figures used in manuscript.
 
 **/test_models:** Code to simulate and compute early warning signals for the test models. These include the Consumer-Resource model, May's harvesting model and an SEIRx model.
@@ -25,6 +27,7 @@ http://www.macs.hw.ac.uk/~gabriel/auto07/auto.html
 **/test_empirical:** Code to pre-process and compute early warning signals for the empirical datasets (see below).
 
 **/training_data:** Code to generate training data for the deep learning algorithm. Execute the script *run_job.sh* to generate two models and time series for each bifurcation type [~1 minute].
+
 
 ## Data sources
 
