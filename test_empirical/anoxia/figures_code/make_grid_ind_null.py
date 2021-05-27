@@ -295,7 +295,7 @@ def make_grid_figure(tsid, var_label, letter_label, title):
                             },
                      row=3,col=1)    
     
-    fig.update_yaxes(title={'text':'DL weights',
+    fig.update_yaxes(title={'text':'DL probability',
                             'standoff':5,
                             },
                      range=[-0.05,1.07],

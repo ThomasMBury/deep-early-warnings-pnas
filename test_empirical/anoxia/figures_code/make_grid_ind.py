@@ -328,7 +328,7 @@ def make_grid_figure(tsid, var_label, letter_label, title):
                             },
                      row=3,col=1)    
     
-    fig.update_yaxes(title={'text':'DL weights',
+    fig.update_yaxes(title={'text':'DL probability',
                             'standoff':5,
                             },
                      range=[-0.05,1.07],
@@ -378,7 +378,7 @@ for tsid in list_tsid:
     
     fig = make_grid_figure(tsid, 'Mo', letter_label, title)      
     # Export as png
-    fig.write_image('../figures/fig_grid_ind/ind_figs_u/img_{}.png'.format(tsid),
+    fig.write_image('../figures/fig_grid_ind/ind_figs_mo/img_{}.png'.format(tsid),
                     scale=2)    
     print('Exported for tsid = {}'.format(tsid))
 

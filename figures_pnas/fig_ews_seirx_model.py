@@ -538,7 +538,7 @@ fig.update_yaxes(title='Lag-1 AC',
 fig.update_yaxes(title='Variance',
                  row=3,col=1)    
 
-fig.update_yaxes(title='DL weights',
+fig.update_yaxes(title='DL probability',
                  row=4,col=1)   
 
 fig.update_yaxes(range=[-0.05,1.05],
