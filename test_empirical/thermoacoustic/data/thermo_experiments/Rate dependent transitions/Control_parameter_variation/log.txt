@@ -1,0 +1,111 @@
+
+Experiment: rate dependent transitions in the Rijke tube
+Date: 11.11.2019
+Experiments performed by Induja
+-------------------------------------------------
+Details of control parameter variation:
+
+Sampling frequency, fs= 2 kHz, (1kHz for experiments with 2mV/s, 3mV/s and 4mV/s cases)
+
+The starting number in the file name corresponds to the number in the file name of pressure data.
+
+1st col:voltage,    2nd col:current
+Conversion factors: Voltage = 1st col* 1.6 Volts
+                    Current = 2nd col* 80 Ampere
+--------------------------
+
+1_parameter_40mV_s.txt
+t0=0,   tf= 60s
+fs = 2kHz
+--------------------------
+
+2_parameter_2mV_s.txt
+fs = 1kHz
+t0=0,   tf= 1200s
+--------------------------
+
+3_parameter_4mV_s.txt
+fs = 2kHz
+t0=0,   tf= 600s
+--------------------------
+4_parameter_5mV_s.txt
+fs = 2kHz
+t0=0,   tf= 480s
+--------------------------
+5_parameter_10mV_s.txt
+fs = 2kHz
+t0=0,   tf= 240s
+--------------------------
+6_parameter_20mV_s.txt
+fs = 2kHz
+t0=0,   tf= 120s
+--------------------------
+7_parameter_30mV_s.txt
+fs = 2kHz
+t0=0,   tf= 80s
+--------------------------
+8_parameter_60mV_s.txt
+
+t0=0,   tf= 40s
+v0= 0,    vf = 2.4v
+--------------------------
+9_parameter_80mV_s.txt
+fs = 2kHz
+t0=0,   tf= 30s
+v0= 0,    vf = 2.4v
+
+--------------------------
+
+10_parameter_120mV_s.txt
+fs = 2kHz
+t0=0,   tf= 20s   
+v0= 0,    vf = 2.4v
+
+--------------------------
+11_parameter_240s.txt
+fs = 2kHz
+t0=0,   tf= 10s   , acquired for total 10+5s
+v0= 0,    vf = 2.4v
+
+--------------------------
+12_parameter_480mV_s.txt
+fs = 2kHz
+t0=0,   tf= 5s   , acquired for total 5+5s
+v0= 0,    vf = 2.4v
+--------------------------
+13_parameter_800mV_s.txt
+fs = 2kHz
+t0=0,   tf= 3s   , acquired for total 3+5s
+v0= 0,    vf = 2.4v
+
+--------------------------
+14_parameter_1200mV_s.txt
+fs = 2kHz
+t0=0,   tf= 2s   , acquired for total 2+5s
+v0= 0,    vf = 2.4v
+--------------------------
+
+15_parameter_2400mV_s.txt
+fs = 2kHz
+t0=0,   tf=1s   , acquired for total 1+5s
+v0= 0,    vf = 2.4v
+--------------------------
+
+16_parameter_4800mV_s.txt
+ fs = 2kHz
+t0=0,   tf= 0.5s   , acquired for total 0.5+4.5s
+v0= 0,    vf = 2.4v
+--------------------------
+17_parameter_24000mV_s.txt
+ fs = 2kHz
+t0=0,   tf= 0.1s   , acquired for total 0.1+4.9s
+v0= 0,    vf = 2.4v
+--------------------------
+18- Voltage and current are not recorded
+Only pressre
+--------------------------
+19_parameter_3mV_s.txt
+
+t0=0,   tf= 800s, fs = 1kHz
+v0= 0,    vf = 2.4v
+--------------------------

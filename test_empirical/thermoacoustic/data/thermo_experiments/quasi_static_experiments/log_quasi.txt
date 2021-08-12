@@ -1,0 +1,15 @@
+
+
+Experiment: Quasi static experiments in the Rijke tube
+Date: 11.11.2019
+Experiments performed by Induja
+-------------------------------------------------
+Experimental conditions:
+
+Mass flow rate of air= 100 SLPM
+sampling frequency fs= 10 kHz
+
+Each text file contains pressure data acquired at a constant voltage. 
+The converted voltage (in Volts), current (in Ampere) and heater power (in Watt) corresponding to each text file are given in the 'control parameter' folder.
+
+The files upto '10.txt' do not have transition to limit cycle oscillations (LCO) and 11-19 are LCOs.

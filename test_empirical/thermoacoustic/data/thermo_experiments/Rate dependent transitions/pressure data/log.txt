@@ -1,0 +1,131 @@
+Experiment: rate dependent transitions in the Rijke tube
+Date: 11.11.2019
+Experiments performed by Induja
+-------------------------------------------------
+Experimental conditions:
+
+separately acquired pressure and output of heater using 2 DAQs
+Mass flow rate of air= 100 SLPM
+sampling frequency fs= 10 kHz for most of the cases except for a few very slow rates
+pressure transducer: PCB103B02, 
+    sensitivity: 217.5 mV/kPa
+    voltage limits of the pressure transducer: -5 to 5V
+
+..................................
+Control parameter:
+
+We vary the voltage to the heater linearly from 0 V to 2.4 V in different time duration.
+Final voltage, Vf= 2.4V, Initial voltage, Vi= 0, 
+Rate (R) is mentioned in mV/s for each 'txt' files
+...................................
+Details of each data:
+
+The first column is time and the second column is the acoustic pressure.
+The conversion factor to convert pressure to pascal is (1000/0.2175)
+Thus, the second multiplied column multiplied by (1000/0.2175) will give pressure in Pa
+
+1.txt   
+Rate, R= 40 mV/s, sampling frequency, fs = 10 kHz
+Final time, tf=60s, Initial time, ti=0
+...................................
+
+2.txt   
+R= 2 mV/s,   fs = 4 kHz 
+tf=1200s, ti=0
+................................
+
+3.txt   
+R= 4 mV/s,   fs = 4 kHz
+tf=600s, ti=0
+.................................
+
+4.txt  
+R= 5 mV/s,	fs = 10 kHz
+tf= 480s, ti=0	      
+.................................
+
+5.txt  
+R= 10 mV/s   fs=10 kHz
+tf=240s, ti=0       
+................................
+
+6.txt  
+R= 20 mV/s   fs=10 kHz 
+tf=120s, ti=0 
+
+..................................
+
+7.txt  
+R= 30 mV/s   fs=10 kHz
+tf=80s, ti=0 
+................................
+
+8.txt 
+R= 60 mV/s, fs=10 kHz
+tf= 40s, ti=0
+.................................
+
+9.txt 
+R= 80 mV/s, fs=10 kHz
+tf= 30s, ti=0
+.................................
+
+10.txt 
+R= 120 mV/s, fs=10 kHz
+tf= 20s, ti=0
+.................................
+
+11.txt 
+R= 240 mV/s, fs=10 kHz
+tf=10s, ti=0 
+Data acquired for extra 5s at the final value of voltage,thus total time = 15 s
+.................................
+
+12.txt 
+R= 480 mV/s, fs=10 kHz
+tf= 5s, ti=0 
+tf=10s, ti=0 , data for extra 5s
+Data acquired for extra 5s at the final value of voltage,thus total time = 10 s
+.................................
+
+13.txt 
+R= 800 mV/s, fs=10 kHz
+tf= 3s, ti=0, data for extra 5s
+Data acquired for extra 5s at the final value of voltage,thus total time = 8 s
+.................................
+
+14.txt 
+R= 1200 mV/s, fs=10 kHz
+tf= 2s, ti=0 acquire: extra 5s 
+Data acquired for extra 5s at the final value of voltage,thus total time = 7 s
+.................................
+
+15.txt 
+R= 2400 mV/s, fs=10 kHz
+tf= 1s, ti=0 acquire: extra 5s 
+Data acquired for extra 5s at the final value of voltage,thus total time = 6 s
+.................................
+
+16.txt 
+R= 4800 mV/s, fs=10 kHz
+tf= 0.5s, ti=0 acquire: extra 4.5s 
+Data acquired for extra 4.5s at the final value of voltage,thus total time = 5 s
+.................................
+
+17.txt 
+R= 24000 mV	/s, fs=10 kHz
+tf= 0.1s, ti=0 acquire: extra 4.9s 
+Data acquired for extra 4.9 s at the final value of voltage,thus total time = 5 s
+.................................
+
+18.txt  
+R= 2 mV/s,   fs=4 kHz  (repeat of '2.txt', voltage variation is not recorded)
+tf=1200s, ti=0 
+
+................................
+
+19.txt  
+R= 3 mV/s,   fs= 4 kHz
+tf=800s, ti=0 
+
+................................
