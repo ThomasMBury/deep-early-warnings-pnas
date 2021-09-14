@@ -67,13 +67,13 @@ if not os.path.exists('output_groups'):
     
 
 # Collect Fold bifurcations (label 0)
-df_fold = df_labels[df_labels['class_label']==0]
+df_fold = df_labels[df_labels['class_label']==0].copy()
 # Collect Hopf bifurcations (label 1)
-df_hopf = df_labels[df_labels['class_label']==1]
+df_hopf = df_labels[df_labels['class_label']==1].copy()
 # Collect Branch points (label 2)
-df_branch = df_labels[df_labels['class_label']==2]
+df_branch = df_labels[df_labels['class_label']==2].copy()
 # Collect Null labels (label 3)
-df_null = df_labels[df_labels['class_label']==3]
+df_null = df_labels[df_labels['class_label']==3].copy()
 
 # Check they all have the same length
 assert len(df_fold) == len(df_hopf)

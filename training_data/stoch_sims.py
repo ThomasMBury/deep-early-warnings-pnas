@@ -7,9 +7,9 @@ Created on Wed Jul 31 10:05:17 2019
 
 SCRIPT TO:
 Get info from b.out files (AUTO files)
-Run stochastic simulations up to bifurcation points for 700 time units
+Run stochastic simulations up to bifurcation points for ts_len+200 time units
 Detect transition point using change-point algorithm
-Ouptut time-series of 500 time units prior to transition
+Ouptut time-series of ts_len time units prior to transition
 
 """
 
@@ -22,7 +22,7 @@ import os
 from convert_bifdata import convert_bifdata
 
     
-# Function to simulation model
+# Function to simulate model
 from sim_model import sim_model
 
 
@@ -43,7 +43,7 @@ if not os.path.exists('output_labels'):
 if not os.path.exists('output_counts'):
     os.makedirs('output_counts')
 
-# Variables from bash shell
+# Get command line variables
 import sys
 hopf_count = int(sys.argv[1])
 fold_count = int(sys.argv[2])
@@ -53,6 +53,7 @@ null_f_count = int(sys.argv[5])
 null_b_count = int(sys.argv[6])
 bif_max = int(sys.argv[7])
 batch_num = int(sys.argv[8])
+ts_len = int(sys.argv[9])
 
 
 # Noise amplitude
@@ -161,8 +162,11 @@ for i in range(len(list_models)):
     
     # Pick sample spacing randomly from [0.1,0.2,...,1]
     dt_sample = np.random.choice(np.arange(1,11)/10)
-    # Number of points in simulation data
-    series_len = 700
+    # Define length of simulation
+    # This is 200 points longer than ts_len
+    # to increase the chance that we can extract ts_len data points prior to a transition
+    # (transition can occur before the bifurcation is reached)
+    series_len = ts_len + 200
     
     # Simulate a null_h trajectory
     if null_h_sim and (model.bif_type == 'HB'):
@@ -172,9 +176,9 @@ for i in range(len(list_models)):
                            null_location=0)
         # Detect transition point (if none then outputs end point)
         trans_time = trans_detect(df_out)
-        # Only if trans_time > 500, keep and cut trajectory
-        if trans_time > 500:
-            df_cut = df_out.loc[trans_time-500:trans_time-1].reset_index()
+        # Only if trans_time > ts_len, keep and cut trajectory
+        if trans_time > ts_len:
+            df_cut = df_out.loc[trans_time-ts_len:trans_time-1].reset_index()
             # Have time-series start at time t=0
             df_cut['Time'] = df_cut['Time']-df_cut['Time'][0]
             df_cut.set_index('Time', inplace=True)
@@ -189,9 +193,9 @@ for i in range(len(list_models)):
             seq_id += 1
             # Allow a maximum of one Null simulation for model
             null_h_sim = False
-            print('   Achieved 500 steps - exporting')
+            print('   Achieved {} steps - exporting'.format(ts_len))
         else:
-        	print('   Transitioned before 500 steps - no export')
+        	print('   Transitioned before {} steps - no export'.format(ts_len))
         
 
     
@@ -203,9 +207,9 @@ for i in range(len(list_models)):
                            null_location=0)
         # Detect transition point (if none then outputs end point)
         trans_time = trans_detect(df_out)
-        # Only if trans_time > 500, keep and cut trajectory
-        if trans_time > 500:
-            df_cut = df_out.loc[trans_time-500:trans_time-1].reset_index()
+        # Only if trans_time > ts_len, keep and cut trajectory
+        if trans_time > ts_len:
+            df_cut = df_out.loc[trans_time-ts_len:trans_time-1].reset_index()
             # Have time-series start at time t=0
             df_cut['Time'] = df_cut['Time']-df_cut['Time'][0]
             df_cut.set_index('Time', inplace=True)
@@ -220,9 +224,9 @@ for i in range(len(list_models)):
             seq_id += 1
             # Allow a maximum of one Null simulation for model
             null_f_sim = False
-            print('   Achieved 500 steps - exporting')
+            print('   Achieved {} steps - exporting'.format(ts_len))
         else:
-        	print('   Transitioned before 500 steps - no export')
+        	print('   Transitioned before {} steps - no export'.format(ts_len))
 
 
 
@@ -235,9 +239,9 @@ for i in range(len(list_models)):
                            null_location=0)
         # Detect transition point (if none then outputs end point)
         trans_time = trans_detect(df_out)
-        # Only if trans_time > 500, keep and cut trajectory
-        if trans_time > 500:
-            df_cut = df_out.loc[trans_time-500:trans_time-1].reset_index()
+        # Only if trans_time > ts_len, keep and cut trajectory
+        if trans_time > ts_len:
+            df_cut = df_out.loc[trans_time-ts_len:trans_time-1].reset_index()
             # Have time-series start at time t=0
             df_cut['Time'] = df_cut['Time']-df_cut['Time'][0]
             df_cut.set_index('Time', inplace=True)
@@ -252,9 +256,9 @@ for i in range(len(list_models)):
             seq_id += 1
             # Allow a maximum of one Null simulation for model
             null_b_sim = False
-            print('   Achieved 500 steps - exporting')
+            print('   Achieved {} steps - exporting'.format(ts_len))
         else:
-        	print('   Transitioned before 500 steps - no export')
+        	print('   Transitioned before {} steps - no export'.format(ts_len))
 
     # Simulate a Hopf trajectory
     if hopf_sim and (model.bif_type == 'HB'):
@@ -263,9 +267,9 @@ for i in range(len(list_models)):
                            sigma=sigma)
         # Detect transition point
         trans_time = trans_detect(df_out)
-        # Only if trans_time > 500, keep and cut trajectory
-        if trans_time > 500:
-            df_cut = df_out.loc[trans_time-500:trans_time-1].reset_index()
+        # Only if trans_time > ts_len, keep and cut trajectory
+        if trans_time > ts_len:
+            df_cut = df_out.loc[trans_time-ts_len:trans_time-1].reset_index()
             # Have time-series start at time t=0
             df_cut['Time'] = df_cut['Time']-df_cut['Time'][0]
             df_cut.set_index('Time', inplace=True)
@@ -280,9 +284,9 @@ for i in range(len(list_models)):
             seq_id += 1
             # Allow a maximum of one Hopf bifurcation for model
             hopf_sim = False
-            print('   Achieved 500 steps - exporting')
+            print('   Achieved {} steps - exporting'.format(ts_len))
         else:
-        	print('   Transitioned before 500 steps - no export') 
+        	print('   Transitioned before {} steps - no export'.format(ts_len))
             
     # Simulate a Fold trajectory
     if fold_sim and (model.bif_type == 'LP'):
@@ -291,9 +295,9 @@ for i in range(len(list_models)):
                            sigma=sigma)
         # Detect transition point
         trans_time = trans_detect(df_out)
-        # Only if trans_time > 500, keep and cut trajectory
-        if trans_time > 500:
-            df_cut = df_out.loc[trans_time-500:trans_time-1].reset_index()
+        # Only if trans_time > ts_len, keep and cut trajectory
+        if trans_time > ts_len:
+            df_cut = df_out.loc[trans_time-ts_len:trans_time-1].reset_index()
             # Have time-series start at time t=0
             df_cut['Time'] = df_cut['Time']-df_cut['Time'][0]
             df_cut.set_index('Time', inplace=True)
@@ -308,9 +312,9 @@ for i in range(len(list_models)):
             seq_id += 1
             # Allow a maximum of one fold bifurcation from model
             fold_sim = False
-            print('   Achieved 500 steps - exporting')
+            print('   Achieved {} steps - exporting'.format(ts_len))
         else:
-        	print('   Transitioned before 500 steps - no export')
+        	print('   Transitioned before {} steps - no export'.format(ts_len))
 
 
     # Simulate a Branch point trajectory
@@ -321,9 +325,9 @@ for i in range(len(list_models)):
         # Detect transition point
         trans_time = trans_detect(df_out)
         
-        # Only if trans_time > 500, keep and cut trajectory
-        if trans_time > 500:
-            df_cut = df_out.loc[trans_time-500:trans_time-1].reset_index()
+        # Only if trans_time > ts_len, keep and cut trajectory
+        if trans_time > ts_len:
+            df_cut = df_out.loc[trans_time-ts_len:trans_time-1].reset_index()
             # Have time-series start at time t=0
             df_cut['Time'] = df_cut['Time']-df_cut['Time'][0]
             df_cut.set_index('Time', inplace=True)
@@ -338,12 +342,12 @@ for i in range(len(list_models)):
             seq_id += 1
             # Allow a maximum of one branch point from model
             branch_sim = False
-            print('   Achieved 500 steps - exporting')
+            print('   Achieved {} steps - exporting'.format(ts_len))
         else:
-        	print('   Transitioned before 500 steps - no export')
+        	print('   Transitioned before {} steps - no export'.format(ts_len))
 
 print('Simulations finished\n')
-# Export updated counts of bifurcations for the bash scriptr
+# Export updated counts of bifurcations for the bash script
 list_counts = np.array([hopf_count, fold_count, branch_count, null_h_count, null_f_count, null_b_count])
 np.savetxt('output_counts/list_counts.txt',list_counts, fmt='%i')
     

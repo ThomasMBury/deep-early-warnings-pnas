@@ -1,52 +1,37 @@
 #!/bin/bash
 
-# # Thomas Bury
-# # PhD Candidate
-# # Bauch computational epidemiology research group
-# # Department of Applied Mathematics
-# # Faculty of Mathematics
-# # University of Waterloo
-
-#SBATCH --account=hagrid
-#SBATCH --partition=hagrid_long
-#SBATCH --mem=1000MB
-#SBATCH --time=0-01:00:00
-#SBATCH --output=output/stdout/zip-%j.out
-#SBATCH --ntasks=1
-#SBATCH --mail-type=END
-#SBATCH --mail-user=tbury@uwaterloo.ca
+# Script to stack label and group data from each batch
+# and copy all simulation and residual data to the same folder
 
 
-# Label for set of batches (external variable)
-batch_set=$1
 
-# Number of batches within each set
-num_batches=$2
+# Command line arguments
+num_batches=$1 # number of batches generated
+ts_len=$2 # time series length
 
-# Run Python file to concatenate label and group data
-python3 combine_batches.py $batch_set $num_batches
 
+# Run Python file to stack the label and group data
+python3 stack_labels_groups.py $num_batches $ts_len
 
 # Move time series data from batches to combined directory
-mkdir -p output/combined_$batch_set/output_sims
-mkdir -p output/combined_$batch_set/output_resids
+mkdir -p output/ts_$ts_len/combined/output_sims
+mkdir -p output/ts_$ts_len/combined/output_resids
 
-let min=(batch_set-1)\*num_batches+1
-let max=batch_set\*num_batches
+let min=1
+let max=num_batches
 
 for i in $(seq $min $max)
 do
-   mv output/batch$i/output_sims/* output/combined_$batch_set/output_sims
-   mv output/batch$i/output_resids/* output/combined_$batch_set/output_resids
+   cp output/ts_$ts_len/batch$i/output_sims/* output/ts_$ts_len/combined/output_sims
+   cp output/ts_$ts_len/batch$i/output_resids/* output/ts_$ts_len/combined/output_resids
 done
 
 # Zip the folders
-cd output/combined_$batch_set
+cd output/ts_$ts_len/combined
 zip -r output_sims.zip output_sims
 zip -r output_resids.zip output_resids
 
-# Delete the originals
-rm -r output_sims output_resids
+## Delete the originals
+# rm -r output_sims output_resids
 
-cd ../../
-
+cd ../../../

@@ -29,6 +29,39 @@ http://www.macs.hw.ac.uk/~gabriel/auto07/auto.html
 **/training_data:** Code to generate training data for the deep learning algorithm. Execute the script *run_job.sh* to generate two models and time series for each bifurcation type [~1 minute].
 
 
+## Workflow
+
+The results in the paper are obtained from the following workflow:
+
+1. **Generate the training data**. We generate two sets of training data. One for the 500-classifier and the other for the 1500-classifier. The 500-classifier (1500-classifier) is trained on 500,000 (200,000) time series, each of length 500 (1500) data points. Run
+
+   ```bash
+   bash training_data/run_single_batch.sh $batch_num $ts_len
+   ```
+   
+   where $batch_num is a batch number (integer) and $ts_len is a time series length (500 or 1500). This generates 4,000 time series, consisting of 1000 time series for each possible outcome (fold, Hopf, transcritical, Null). Each time series is saved as a csv file. This alone can take up to 1000 minutes (~17 hours) on a single CPU. We therefore run multiple batches in parallel on a CPU cluster at the University of Waterloo. This cluster uses the Slurm workload manager. The script to submit the 125 batches for the 500-classifier is `submit_multi_batch_500.py`. The script to submit the 50 batches for the 1500-classifier is `submit_multi_batch_1500.py`.
+
+   Once every batch has been generated, the output data from each batch is combined using
+   
+   ```bash
+   bash combine_batches.sh $num_batches $ts_len
+   ```
+   
+   where $num_batches is the total number of batches being used. This also stacks the labels.csv and groups.csv files, and compresses the folder containing the time series data.
+   
+   The final compressed output comes out at ()GB for the 500-classifier and () GB for the 1500-classifier. Both datasets are archived on Zenodo at (). 
+
+2. **Train the deep learning algorithm**. The neural network is then trained. This process can be run using
+
+   ```bash
+   python DL_training.py
+   ```
+
+
+
+
+
+
 ## Data sources
 
 The empirical data used in this study are available from the following sources:
