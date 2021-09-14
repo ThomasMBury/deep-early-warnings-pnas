@@ -20,7 +20,7 @@ print('Running AUTO')
 par_labels = ['a'+str(i) for i in np.arange(1,11)]+['b'+str(i) for i in np.arange(1,11)]
 
 # Import parameter data as an array
-with open('output_model/pars.csv', 'rb') as csvfile:
+with open('output_model/pars.csv', 'r') as csvfile:
     pars_raw = list(csv.reader(csvfile))
 pars_list = [float(p[0]) for p in pars_raw]
 pars_array = np.array(pars_list)
@@ -31,7 +31,7 @@ p = dict(zip(np.concatenate((np.arange(1,11), np.arange(12,22))), pars_array))
     
 
 # Import equilibrium data as an array
-with open('output_model/equi.csv', 'rb') as csvfile:
+with open('output_model/equi.csv', 'r') as csvfile:
     equi_raw = list(csv.reader(csvfile))   
       
 equi_list = [float(e[0]) for e in equi_raw]
