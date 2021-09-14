@@ -123,7 +123,7 @@ test_target = np.array(test_target)
 # hyperparameter settings
 
 CNN_layers = 1
-LSTM_layers = 0  
+LSTM_layers = 1  
 pool_size_param = 2
 learning_rate_param = 0.0005     
 batch_param = 1000
@@ -149,10 +149,7 @@ for kk in range(1,2):
         
     model.add(Dropout(dropout_percent))
     model.add(MaxPooling1D(pool_size=pool_size_param))
-    
-    model.add(LSTM(mem_cells, return_sequences=True,kernel_initializer = initializer_param))
-    model.add(Dropout(dropout_percent))
-    
+
     if LSTM_layers == 1:
         model.add(LSTM(mem_cells, return_sequences=True,kernel_initializer = initializer_param))
         model.add(Dropout(dropout_percent))
