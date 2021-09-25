@@ -1,6 +1,7 @@
-# Deep learning for early warning signals of regime shifts
-This repository contains code to accompany the publication:
-#### *Deep learning for early warning signals of regime shifts*. In review at *PNAS*, 18 May 2021 <https://doi.org/number_here> Thomas M. Bury [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-1595-9444), R. I Sujith, Induja Pavithran, Marten Scheffer, Timothy M. Lenton, Madhur Anand, and Chris T. Bauch. 
+# Deep learning for early warning signals of tipping points
+This repository contains code to accompany the publication
+
+#### *Deep learning for early warning signals of tipping points*. [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-1595-9444)Thomas M. Bury, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-0791-7896)R. I. Sujith, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-4923-2537)Induja Pavithran, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/[0000-0002-2100-0312](https://orcid.org/0000-0002-2100-0312))Marten Scheffer, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-6725-7498)Timothy M. Lenton, Madhur Anand, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-6214-6601)Chris T. Bauch. *Proceedings of the National Academy of Sciences* 2021, 118 (39) e2106140118; DOI: 10.1073/pnas.2106140118
 
 
 ## Requirements
@@ -10,7 +11,7 @@ Python 3.7 is required. To install python package dependencies, use the command
 ```setup
 pip install -r requirements.txt
 ```
-preferably within a new virtual environment.
+within a new virtual environment.
 
 The bifurcation continuation software AUTO-07P is required. Installation instructions are provided at
 http://www.macs.hw.ac.uk/~gabriel/auto07/auto.html
@@ -39,7 +40,7 @@ The results in the paper are obtained from the following workflow:
    bash training_data/run_single_batch.sh $batch_num $ts_len
    ```
    
-   where $batch_num is a batch number (integer) and $ts_len is a time series length (500 or 1500). This generates 4,000 time series, consisting of 1000 time series for each possible outcome (fold, Hopf, transcritical, Null). Each time series is saved as a csv file. This alone can take up to 1000 minutes (~17 hours) on a single CPU. We therefore run multiple batches in parallel on a CPU cluster at the University of Waterloo. This cluster uses the Slurm workload manager. The script to submit the 125 batches for the 500-classifier is `submit_multi_batch_500.py`. The script to submit the 50 batches for the 1500-classifier is `submit_multi_batch_1500.py`.
+   where $batch_num is a batch number (integer) and $ts_len is a time series length (500 or 1500). This generates 4,000 time series, consisting of 1000 time series for each possible outcome (fold, Hopf, transcritical, Null). Each time series is saved as a csv file. This alone can take up to 1000 minutes (~17 hours) on a single CPU. We therefore run multiple batches in parallel on a CPU cluster at the University of Waterloo. This cluster uses the Slurm workload manager. The script to submit the 125 batches (125x4000=500k time series) for the 500-classifier is `submit_multi_batch_500.py`. The script to submit the 50 batches (50x4000=200k time series) for the 1500-classifier is `submit_multi_batch_1500.py`.
 
    Once every batch has been generated, the output data from each batch is combined using
    
@@ -49,7 +50,7 @@ The results in the paper are obtained from the following workflow:
    
    where $num_batches is the total number of batches being used. This also stacks the labels.csv and groups.csv files, and compresses the folder containing the time series data.
    
-   The final compressed output comes out at ()GB for the 500-classifier and () GB for the 1500-classifier. Both datasets are archived on Zenodo at (). 
+   The final compressed output comes out at 5.87GB for the 500-classifier and 5.38GB for the 1500-classifier. Both datasets are archived on Zenodo at [https://zenodo.org/record/5527154#.YU9SuGZKhqs](https://zenodo.org/record/5527154#.YU9SuGZKhqs).
 
 2. **Train the deep learning algorithm**. The neural network is then trained. This process can be run using
 
