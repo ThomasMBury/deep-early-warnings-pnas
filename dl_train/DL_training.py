@@ -28,11 +28,13 @@ random.seed(datetime.now())
 # 1: both left and right sides of time series are padded
 # 2: only left side of time series is padded
 
-# Get command line parameters
-model_type = int(sys.argv[1])
-kk = int(sys.argv[2]) # index for NN
-print('Train a classifier of type {} with index {}'.format(model_type, kk))
+# # Get command line parameters
+# model_type = int(sys.argv[1])
+# kk = int(sys.argv[2]) # index for NN
+# print('Train a classifier of type {} with index {}'.format(model_type, kk))
 
+model_type = 1
+kk = 1
 
 # Set size of training library and length of time series
 (lib_size, ts_len) = (200000, 1500) # Or (500000, 500) for the 500-classifier
@@ -63,24 +65,24 @@ sequences = list()
 
 
 print('Extract time series from zip file')
-tsid_vals = np.random.choice(np.arange(1,lib_size+1),size=1000)
+# Randomly select training data samples
+tsid_vals = np.random.choice(np.arange(1,lib_size+1),size=1000, replace=False)
 for tsid in tsid_vals:
-# for i in range(1,lib_size+1):
     df = pandas.read_csv(zf.open('output_resids/resids'+str(tsid)+'.csv'))
-    keep_col = ['Residuals']
-    new_f = df[keep_col]
-    values = new_f.values
+    values = df[['Residuals']].values
     sequences.append(values)
 
 sequences = np.array(sequences)
 
-# training labels file
-targets = pandas.read_csv('../training_data/output_full/ts_{}/combined/labels.csv'.format(ts_len))
-targets = targets.values[:,1]
+# Get target labels for each data sample
+df_targets = pandas.read_csv('../training_data/output_full/ts_{}/combined/labels.csv'.format(ts_len),
+                          index_col='sequence_ID')
+# targets = targets.values[:,1]
 
 # train/validation/test split denotations
-groups = pandas.read_csv('../training_data/output_full/ts_{}/combined/groups.csv'.format(ts_len), header=0)
-groups = groups.values[:,1]
+df_groups = pandas.read_csv('../training_data/output_full/ts_{}/combined/groups.csv'.format(ts_len),
+                            index_col='sequence_ID')
+# groups = groups.values[:,1]
 
 #Padding input sequences
 
@@ -112,16 +114,14 @@ for i, tsid in enumerate(tsid_vals):
 final_seq = sequences
 
 # apply train/test/validation labels
-
-train = [final_seq[i] for i, tsid in enumerate(tsid_vals) if groups[tsid-1]==1]
-validation = [final_seq[i] for i, tsid in enumerate(tsid_vals) if groups[tsid-1]==2]
-test = [final_seq[i] for i, tsid in enumerate(tsid_vals) if groups[tsid-1]==3]
-
-train_target = [targets[i] for i, tsid in enumerate(tsid_vals) if groups[tsid-1]==1]
-validation_target = [targets[i] for i, tsid in enumerate(tsid_vals) if groups[tsid-1]==2]
-test_target = [targets[i] for i, tsid in enumerate(tsid_vals) if groups[tsid-1]==3]  
+train = [final_seq[i] for i, tsid in enumerate(tsid_vals) if df_groups['dataset_ID'].loc[tsid]==1]
+validation = [final_seq[i] for i, tsid in enumerate(tsid_vals) if df_groups['dataset_ID'].loc[tsid]==2]
+test = [final_seq[i] for i, tsid in enumerate(tsid_vals) if df_groups['dataset_ID'].loc[tsid]==3]
 
 
+train_target = [df_targets['class_label'].loc[tsid] for i, tsid in enumerate(tsid_vals) if df_groups['dataset_ID'].loc[tsid]==1]
+validation_target = [df_targets['class_label'].loc[tsid] for i, tsid in enumerate(tsid_vals) if df_groups['dataset_ID'].loc[tsid]==2]
+test_target = [df_targets['class_label'].loc[tsid] for i, tsid in enumerate(tsid_vals) if df_groups['dataset_ID'].loc[tsid]==3]  
 
 
 train = np.array(train)
