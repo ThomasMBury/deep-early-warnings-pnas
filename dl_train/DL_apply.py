@@ -38,12 +38,10 @@ both the left and right.  2 is the model trained on data censored on the left on
 filepath = '../test_models/may_fold_1500/data/resids/may_fold_1500_resids.csv'
 
 # Filepath to export ensemble DL predictions to
-filepath_out = '../test_models/may_fold_1500/data/ml_preds/ensemble_trend_probs_may_fold_forced_1_len1500.csv'
+filepath_out = '../test_models/may_fold_1500/data/ml_preds_test/ensemble_trend_probs_may_fold_forced_1_len1500.csv'
 
 # Type of classifier to use (1500 or 500)
 ts_len=1500
-
-
 
 '''  
 The following two parameters control how many sample points along the 
@@ -61,7 +59,6 @@ mult_factor = 10
 # Total number of DL predictions to make
 # Use 150 for length 1500 time series. Use 50 for length 500 time series.
 pad_samples = 150
-
 
 
 

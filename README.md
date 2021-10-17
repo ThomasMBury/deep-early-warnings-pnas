@@ -58,7 +58,7 @@ The results in the paper are obtained from the following workflow:
    python ./dl_train/DL_training.py $model_type $kk
    ```
    
-   This will export the trained model (including weights, biases and architecture) to the directory ./dl_train/best_models/. We run this for model_type in [1,2] and kk in [1,2,3,...,10]. Taking model_type and kk as command line parameters allows training of multiple neural networks in parallel if one has access to mulitple GPUs. The code currently trains networks using the 1500-length time series. To train using the 500-length time series, adjust the parameters lib_size and ts_len, as indicated in the comments of the code. Time to train a single neural network using a GPU is ~ ().
+   This will export the trained model (including weights, biases and architecture) to the directory ./dl_train/best_models/. We run this for model_type in [1,2] and kk in [1,2,3,...,10]. Taking model_type and kk as command line parameters allows training of multiple neural networks in parallel if one has access to mulitple GPUs. The code currently trains networks using the 1500-length time series. To train using the 500-length time series, adjust the parameters lib_size and ts_len, as indicated in the comments of the code. Time to train a single neural network using a GPU is approx. 12 hours.
    
 3. **Generate model data for testing**. Simulate the models used to test the DL algorithm. Code to do this is available in ./test_models/. For example, to simulate trajectories of May's harvesting model going through a Fold bifurcation, run
 
@@ -78,7 +78,7 @@ The results in the paper are obtained from the following workflow:
 
    This code takes in a residual time series at *filepath*, and exports the averaged predictions as a csv file to *filepath_out*. The variables *filepath*, *filepath_out* and *ts_len* should be modified to suit the residual data and the type of classifier being used (1500 or 500-classifier). The script currently computes predictions made by the 1500-classifier on residual data from May's harvesting model.
 
-6. **Compute ROC curves**. To compare the performace of the DL classifiers vs. variance and lag-1 autocorrelation, we compute ROC statistics. Each directory within ./test_models/ and ./test_empirical/ has a script called `compute_roc.py` which does this.
+6. **Compute ROC statistics**. To compare the performace of the DL classifiers vs. variance and lag-1 autocorrelation, we compute ROC statistics. Each directory within ./test_models/ and ./test_empirical/ has a script called `compute_roc.py` which does this.
 
 
 ## Data sources

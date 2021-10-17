@@ -28,21 +28,21 @@ random.seed(datetime.now())
 # 1: both left and right sides of time series are padded
 # 2: only left side of time series is padded
 
-# # Get command line parameters
-# model_type = int(sys.argv[1])
-# kk = int(sys.argv[2]) # index for NN
-# print('Train a classifier of type {} with index {}'.format(model_type, kk))
+# Get command line parameters
+model_type = int(sys.argv[1])
+kk = int(sys.argv[2]) # index for NN
+print('Train a classifier of type {} with index {}'.format(model_type, kk))
 
-model_type = 1
-kk = 1
+# model_type = 1
+# kk = 1
 
 # Set size of training library and length of time series
 (lib_size, ts_len) = (200000, 1500) # Or (500000, 500) for the 500-classifier
 
 
 # keeps track of training metrics
-f1_name = 'training_results_{}.txt'.format(kk)
-f2_name = 'training_results_{}.csv'.format(kk)
+f1_name = 'training_results_{}_{}.txt'.format(kk, model_type)
+f2_name = 'training_results_{}_{}.csv'.format(kk, model_type)
 
 f_results= open(f1_name, "w")
 f_results2 = open(f2_name, "w")
@@ -65,8 +65,7 @@ sequences = list()
 
 
 print('Extract time series from zip file')
-# Randomly select training data samples
-tsid_vals = np.random.choice(np.arange(1,lib_size+1),size=1000, replace=False)
+tsid_vals = np.arange(1,lib_size+1)
 for tsid in tsid_vals:
     df = pandas.read_csv(zf.open('output_resids/resids'+str(tsid)+'.csv'))
     values = df[['Residuals']].values
@@ -77,12 +76,10 @@ sequences = np.array(sequences)
 # Get target labels for each data sample
 df_targets = pandas.read_csv('../training_data/output_full/ts_{}/combined/labels.csv'.format(ts_len),
                           index_col='sequence_ID')
-# targets = targets.values[:,1]
 
 # train/validation/test split denotations
 df_groups = pandas.read_csv('../training_data/output_full/ts_{}/combined/groups.csv'.format(ts_len),
                             index_col='sequence_ID')
-# groups = groups.values[:,1]
 
 #Padding input sequences
 
@@ -144,10 +141,8 @@ filters_param = 50
 mem_cells = 50
 mem_cells2 = 10
 kernel_size_param = 12
-# epoch_param = 1500
-epoch_param=2
+epoch_param = 1500
 initializer_param = 'lecun_normal'
-
 
 
 model = Sequential()
@@ -217,6 +212,5 @@ f_results2.flush()
 
 f_results.close()
 f_results2.close()
-
 
 
