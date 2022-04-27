@@ -76,7 +76,7 @@ The results in the paper are obtained from the following workflow:
    python ./dl_train/DL_apply.py
    ```
 
-   This code takes in a residual time series at *filepath*, and exports the averaged predictions as a csv file to *filepath_out*. The variables *filepath*, *filepath_out* and *ts_len* should be modified to suit the residual data and the type of classifier being used (1500 or 500-classifier). The script currently computes predictions made by the 1500-classifier on residual data from May's harvesting model.
+   This code takes in a residual time series at *filepath*, and exports the averaged predictions as a csv file to *filepath_out*. The variables *filepath*, *filepath_out* and *ts_len* should be modified to suit the residual data and the type of classifier being used (1500 or 500-classifier). The script currently computes predictions made by the 1500-classifier on residual data from May's harvesting model. **If using your own data, it is important to detrend it using a Lowess filter with span 0.20, as is done for the training data.**
 
 6. **Compute ROC statistics**. To compare the performace of the DL classifiers vs. variance and lag-1 autocorrelation, we compute ROC statistics. Each directory within ./test_models/ and ./test_empirical/ has a script called `compute_roc.py` which does this.
 
