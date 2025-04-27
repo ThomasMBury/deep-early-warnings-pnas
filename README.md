@@ -3,11 +3,11 @@ This repository contains code to reproduce results in the publication
 
 #### *Deep learning for early warning signals of tipping points*. [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-1595-9444)Thomas M. Bury, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-0791-7896)R. I. Sujith, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-4923-2537)Induja Pavithran, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/[0000-0002-2100-0312](https://orcid.org/0000-0002-2100-0312))Marten Scheffer, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-6725-7498)Timothy M. Lenton, Madhur Anand, [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-6214-6601)Chris T. Bauch. *Proceedings of the National Academy of Sciences* 2021, 118 (39) e2106140118; DOI: 10.1073/pnas.2106140118
 
-To apply the techniques developed in this article, please check out the Python package [ewstools](https://github.com/ThomasMBury/ewstools). To perform a reproducible run of the article, please read on.
+To apply the techniques developed in this article, please check out the Python package [ewstools](https://github.com/ThomasMBury/ewstools) and its tutorials. To perform a reproducible run of the article, please read on.
 
 ## Requirements
 
-Python 3.9+ and Tensorflow 2.15.0 is required. To install other dependencies, run
+Python 3.9+ and Tensorflow 2.15.0 are required. To install other dependencies, please run
 
 ```setup
 pip install -r requirements.txt
