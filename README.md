@@ -10,6 +10,7 @@ To apply the techniques developed in this article, please check out the Python p
 Python 3.9+ and Tensorflow 2.15.0 are required. To install other dependencies, please run
 
 ```setup
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 within a new virtual environment.
